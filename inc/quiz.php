@@ -4,6 +4,8 @@ session_start();
 include "generate_questions.php";
 generateQuestions();
 
+const CURRENT_QUESTION_INFO = "Question #%s of #%s";
+
 if (!isset($_SESSION['correctAnswer'])) {
     $_SESSION['correctAnswer'] = null;
 }
