@@ -1,7 +1,5 @@
 <?php
     include "inc/quiz.php";
-
-    const CURRENT_QUESTION_INFO = "Question #%s of #%s";
 ?>
 
 <!DOCTYPE html>

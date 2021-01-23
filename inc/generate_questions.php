@@ -5,6 +5,7 @@ const OPTION_RANGE = 10;
 const QUESTION_MIN_RANGE = 0;
 const QUESTION_MAX_RANGE = 100;
 const MESSAGE_FAILED_TO_GENERATE_RANDOM_INTEGER = "Failed to generate random integer between %s and %s. Exception: %s";
+const CURRENT_QUESTION_INFO = "Question #%s of #%s";
 
 $_SESSION["questions"] = [];
 
@@ -21,6 +22,11 @@ function generateQuestions()
     $_SESSION["questions"] = $questions;
 }
 
+/**
+ * @param int $numberOfOptions
+ * @param int $correctAnswer
+ * @return int[]
+ */
 function getAnswerOptions(int $numberOfOptions, int $correctAnswer): array
 {
     $options = [$correctAnswer];
@@ -37,6 +43,11 @@ function getAnswerOptions(int $numberOfOptions, int $correctAnswer): array
     return $options;
 }
 
+/**
+ * @param int $min
+ * @param int $max
+ * @return int|null
+ */
 function getRandomInteger(int $min, int $max): ?int
 {
     try {
